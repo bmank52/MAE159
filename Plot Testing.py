@@ -1,25 +1,32 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-fig1b_df = pd.read_csv('Plots/Fig 1B.csv', header = None)
-#fig1b_parsed_data = {} # Make a dictionary to store the data after it is parsed
+def file_plot (f, xLabel, yLabel, title):
+    plt.figure()
 
-sweep_names = []
-for name in fig1b_df.iloc[0]:  # Looks through the first row, which contains all of the sweep labels
-    if pd.notna(name):   # If the name is not NaN
-        sweep_names.append(name)
+    f_df = pd.read_csv(f, header = None)
+    data_header = [] #Used for graphs with more than one data set such as sweep on fig 1b
+    for name in f_df.iloc[0]:  # Looks through the first row, which contains all of the sweep labels
+        if pd.notna(name):  # If the name is not NaN
+            (data_header.append(name))
+
+    for i in range(len(data_header)):
+        n = 2 * i  # 2 Columns of data per sweep value
+        X = pd.to_numeric(f_df.iloc[2:, n])  # to_numeric converts the data from a string to a number
+        Y = pd.to_numeric(f_df.iloc[2:, n + 1])
+
+        plt.plot(X, Y, label=data_header[i])
+
+    plt.xlabel(xLabel)
+    plt.ylabel(yLabel)
+    plt.title(title)
+    plt.legend()
+    plt.show()
 
 
-plt.figure()
-for i in range(len(sweep_names)):
-    n = 2 * i # 2 Columns of data per sweep value
-    mach = pd.to_numeric(fig1b_df.iloc[2:, n])   #to_numeric converts the data from a string to a number
-    t_c = pd.to_numeric(fig1b_df.iloc[2:, n + 1])
-
-    plt.plot(mach, t_c, label = sweep_names[i])
-
-plt.legend()
-plt.xlabel('M_Div')
-plt.ylabel('t/c')
-plt.title('Fig 1B')
-plt.show()
+file_plot('Plots/Fig 1B.csv', 'M_Div', 't/c', 'Fig 1B')
+file_plot('Plots/Fig 2.csv', 'M_Div', 'C_L', 'Fig 2')
+file_plot('Plots/Fig 3.csv', 'Sweep, t/c, AR', 'C_L', 'Fig 3')
+file_plot('Plots/Fig 4.csv', 'All out Range', 'Wf/W', 'Fig 4')
+file_plot('Plots/Fig 5.csv', 'W/S * T/W', 'TOFL', 'Fig 5')
+file_plot('Plots/Fig 6.csv', 'Delta CDp', 'Cl/CLmax', 'Fig 6')
