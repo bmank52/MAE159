@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="Added to github">
+    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="Created function for plotting data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plot Testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plot Testing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +70,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1767755029745</updated>
-      <workItem from="1767755030847" duration="10325000" />
+      <workItem from="1767755030847" duration="12573000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -129,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768084599404</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Created function for plotting data">
+      <option name="closed" value="true" />
+      <created>1768085849327</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1768085849327</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,7 +157,8 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="Installed libraries" />
     <MESSAGE value="Added to github" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added to github" />
+    <MESSAGE value="Created function for plotting data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created function for plotting data" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MAE159$main.coverage" NAME="main Coverage Results" MODIFIED="1767756795729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
