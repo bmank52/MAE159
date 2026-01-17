@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="add fuel weight ratio estimate function">
+    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="added drag constant Cdo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drag_constant_Cdo.py" beforeDir="false" afterPath="$PROJECT_DIR$/drag_constant_Cdo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuel_weight_ratio_estimate.py" beforeDir="false" afterPath="$PROJECT_DIR$/fuel_weight_ratio_estimate.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +46,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.Plot Testing.executor": "Run",
     "Python.Plotting and Surrogate Modeling.executor": "Run",
+    "Python.drag_constant_Cdo.executor": "Run",
     "Python.fuel_weight_ratio_estimate.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -76,7 +76,8 @@
       <updated>1767755029745</updated>
       <workItem from="1767755030847" duration="12623000" />
       <workItem from="1768270227111" duration="1507000" />
-      <workItem from="1768418407846" duration="4036000" />
+      <workItem from="1768418407846" duration="4308000" />
+      <workItem from="1768620019471" duration="297000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -174,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768426077357</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added drag constant Cdo">
+      <option name="closed" value="true" />
+      <created>1768427283132</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1768427283132</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,11 +209,12 @@
     <MESSAGE value="Added CSV fir JT9DD" />
     <MESSAGE value="Added poly fit for graphs" />
     <MESSAGE value="add fuel weight ratio estimate function" />
-    <option name="LAST_COMMIT_MESSAGE" value="add fuel weight ratio estimate function" />
+    <MESSAGE value="added drag constant Cdo" />
+    <option name="LAST_COMMIT_MESSAGE" value="added drag constant Cdo" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MAE159$fuel_weight_ratio_estimate.coverage" NAME="fuel_weight_ratio_estimate Coverage Results" MODIFIED="1768426012267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$Plotting_and_Surrogate_Modeling.coverage" NAME="Plotting and Surrogate Modeling Coverage Results" MODIFIED="1768425661248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Plotting_and_Surrogate_Modeling.coverage" NAME="Plotting and Surrogate Modeling Coverage Results" MODIFIED="1768427077912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$main.coverage" NAME="main Coverage Results" MODIFIED="1767756795729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Plot_Testing.coverage" NAME="Plot Testing Coverage Results" MODIFIED="1768271879760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
