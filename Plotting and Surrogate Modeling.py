@@ -65,7 +65,7 @@ def file_plot_type_2 (f, xLabel, yLabel, title, deg):   #Plots and creates polyf
 
 
 file_plot_type_1('Plots/Fig 1B.csv', 'M_Div', 't/c', 'Fig 1B', 3)
-file_plot_type_1('Plots/Fig 2.csv', 'M_Div', 'C_L', 'Fig 2', 5)
+file_plot_type_2('Plots/Fig 2.csv', 'M_Div', 'C_L', 'Fig 2', 3)
 file_plot_type_1('Plots/Fig 3.csv', 'Sweep, t/c, AR', 'C_L', 'Fig 3', 3)
 file_plot_type_1('Plots/Fig 4.csv', 'All out Range', 'Wf/W', 'Fig 4', 3)
 file_plot_type_1('Plots/Fig 5.csv', 'W/S * T/W', 'TOFL', 'Fig 5', 3)
