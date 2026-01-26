@@ -1,6 +1,5 @@
 from ambiance import Atmosphere
 import numpy as np
-from numpy.polynomial.polynomial import polyval
 
 ###Takes inputs W/S, M cruise, altitude, sweep, AR and outputs t2c, CL max clean/LND/TO
 
@@ -87,5 +86,3 @@ def Mdd_constraint(W_S, M_cruise, alt, sweep, AR):  #inputs wing loading, cruise
         CL_max_clean = np.polyval(coeff_fig3b[35], t2c) #Not sure best way to handle his case, for now max out at 35 deg sweep
 
     return [t2c, CL_max_LND, CL_max_TO, CL_max_clean]
-
-print(Mdd_constraint(44.24, 0.8, 35000, 35, 10))

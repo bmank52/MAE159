@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="Fixed an error with returning Cd with flaps">
-      <change afterPath="$PROJECT_DIR$/Mdd_constraint.py" afterDir="false" />
+    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="Added Mdd_constraint">
+      <change afterPath="$PROJECT_DIR$/Plots/approach speed.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mdd_constraint.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mdd_constraint.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plotting and Surrogate Modeling.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plotting and Surrogate Modeling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fuel_weight_ratio_estimate.py" beforeDir="false" afterPath="$PROJECT_DIR$/fuel_weight_ratio_estimate.py" afterDir="false" />
     </list>
@@ -49,6 +50,7 @@
     "Python.Mdd_constraint.executor": "Run",
     "Python.Plot Testing.executor": "Run",
     "Python.Plotting and Surrogate Modeling.executor": "Run",
+    "Python.approach speed.executor": "Run",
     "Python.drag_constant_Cdo.executor": "Run",
     "Python.fuel_weight_ratio_estimate.executor": "Run",
     "Python.main.executor": "Run",
@@ -58,6 +60,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
@@ -80,7 +83,11 @@
       <workItem from="1767755030847" duration="12623000" />
       <workItem from="1768270227111" duration="1507000" />
       <workItem from="1768418407846" duration="4308000" />
-      <workItem from="1768620019471" duration="7057000" />
+      <workItem from="1768620019471" duration="7930000" />
+      <workItem from="1768860026358" duration="409000" />
+      <workItem from="1768964507601" duration="1008000" />
+      <workItem from="1769042800882" duration="31000" />
+      <workItem from="1769390794089" duration="6429000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -194,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768620600184</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added Mdd_constraint">
+      <option name="closed" value="true" />
+      <created>1768784707204</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1768784707204</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,13 +237,26 @@
     <MESSAGE value="add fuel weight ratio estimate function" />
     <MESSAGE value="added drag constant Cdo" />
     <MESSAGE value="Fixed an error with returning Cd with flaps" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed an error with returning Cd with flaps" />
+    <MESSAGE value="Added Mdd_constraint" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Mdd_constraint" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Plots/approach speed.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MAE159$fuel_weight_ratio_estimate.coverage" NAME="fuel_weight_ratio_estimate Coverage Results" MODIFIED="1768620851105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$approach_speed.coverage" NAME="approach speed Coverage Results" MODIFIED="1769399541543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Plots" />
+    <SUITE FILE_PATH="coverage/MAE159$fuel_weight_ratio_estimate.coverage" NAME="fuel_weight_ratio_estimate Coverage Results" MODIFIED="1769399451712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$drag_constant_Cdo.coverage" NAME="drag_constant_Cdo Coverage Results" MODIFIED="1768620590805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$Plotting_and_Surrogate_Modeling.coverage" NAME="Plotting and Surrogate Modeling Coverage Results" MODIFIED="1768784487799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$Mdd_constraint.coverage" NAME="Mdd_constraint Coverage Results" MODIFIED="1768784608675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Plotting_and_Surrogate_Modeling.coverage" NAME="Plotting and Surrogate Modeling Coverage Results" MODIFIED="1769399269908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Mdd_constraint.coverage" NAME="Mdd_constraint Coverage Results" MODIFIED="1768785400890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$main.coverage" NAME="main Coverage Results" MODIFIED="1767756795729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Plot_Testing.coverage" NAME="Plot Testing Coverage Results" MODIFIED="1768271879760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
