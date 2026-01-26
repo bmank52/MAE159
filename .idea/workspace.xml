@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="Added Mdd_constraint">
-      <change afterPath="$PROJECT_DIR$/Plots/approach speed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mdd_constraint.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mdd_constraint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotting and Surrogate Modeling.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plotting and Surrogate Modeling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuel_weight_ratio_estimate.py" beforeDir="false" afterPath="$PROJECT_DIR$/fuel_weight_ratio_estimate.py" afterDir="false" />
+    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="Moved file location of approach speed module">
+      <change afterPath="$PROJECT_DIR$/Landing Field Length.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/approach speed.py" beforeDir="false" afterPath="$PROJECT_DIR$/approach speed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drag_constant_Cdo.py" beforeDir="false" afterPath="$PROJECT_DIR$/drag_constant_Cdo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +45,7 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.Landing Field Length.executor": "Run",
     "Python.Mdd_constraint.executor": "Run",
     "Python.Plot Testing.executor": "Run",
     "Python.Plotting and Surrogate Modeling.executor": "Run",
@@ -65,6 +64,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bmank\Documents\MAE159" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -87,7 +91,7 @@
       <workItem from="1768860026358" duration="409000" />
       <workItem from="1768964507601" duration="1008000" />
       <workItem from="1769042800882" duration="31000" />
-      <workItem from="1769390794089" duration="6429000" />
+      <workItem from="1769390794089" duration="8767000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -209,7 +213,23 @@
       <option name="project" value="LOCAL" />
       <updated>1768784707204</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Corrected fuel weight fraction estimate, added approach speed module, added csv data for JT9D thrust at SL, 35k, 45k">
+      <option name="closed" value="true" />
+      <created>1769399608172</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1769399608172</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Moved file location of approach speed module">
+      <option name="closed" value="true" />
+      <created>1769399736876</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1769399736876</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,13 +258,15 @@
     <MESSAGE value="added drag constant Cdo" />
     <MESSAGE value="Fixed an error with returning Cd with flaps" />
     <MESSAGE value="Added Mdd_constraint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Mdd_constraint" />
+    <MESSAGE value="Corrected fuel weight fraction estimate, added approach speed module, added csv data for JT9D thrust at SL, 35k, 45k" />
+    <MESSAGE value="Moved file location of approach speed module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved file location of approach speed module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Plots/approach speed.py</url>
+          <url>file://$PROJECT_DIR$/approach speed.py</url>
           <line>20</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -258,6 +280,7 @@
     <SUITE FILE_PATH="coverage/MAE159$Plotting_and_Surrogate_Modeling.coverage" NAME="Plotting and Surrogate Modeling Coverage Results" MODIFIED="1769399269908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Mdd_constraint.coverage" NAME="Mdd_constraint Coverage Results" MODIFIED="1768785400890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$main.coverage" NAME="main Coverage Results" MODIFIED="1767756795729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Landing_Field_Length.coverage" NAME="Landing Field Length Coverage Results" MODIFIED="1769406151917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Plot_Testing.coverage" NAME="Plot Testing Coverage Results" MODIFIED="1768271879760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

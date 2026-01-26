@@ -19,5 +19,4 @@ def iterate_W_S_LND(W_S, M_cruise, sweep, AR, Vap, temp_delta, alt): #input Vap 
         W_S_new = calc_W_S_new(W_S, M_cruise, sweep, AR, Vap, densityHot, alt)
     return W_S_new
 
-print(iterate_W_S_LND(130, 0.85, 35, 8, 140, 22.8, 35000))
 

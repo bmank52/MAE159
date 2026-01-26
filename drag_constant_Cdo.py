@@ -20,4 +20,3 @@ def drag_constant_Cdo(CL, CL_max, AR, gear_down, flaps, M, M_cruise, Cdo):    #i
         Cd += np.polyval([108.18261739,-67.42614684,16.39380699,1.99475706], CL_ratio)
         return [Cd, CL / Cd, Cdo, e]
 
-print(drag_constant_Cdo(0.554, 1.5, 10, False, False, 0.8, 0.8, .015))
