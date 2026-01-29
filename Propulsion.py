@@ -48,6 +48,3 @@ def propulsion(alt, Ma):
         """
     lapse = Thrust_max_alt / T_max_exist_SLSD
     return [Thrust_max_alt,lapse]
-
-
-print(propulsion(35000,.67))
