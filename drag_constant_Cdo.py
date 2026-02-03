@@ -14,9 +14,9 @@ def drag_constant_Cdo(CL, CL_max, AR, gear_down, flaps, M, M_cruise, Cdo=0.015):
     if not flaps:   # no flaps, if false
         return [Cd, CL / Cd, Cdo, e]
     elif flaps =="TO":   #flaps in Take off config
-        Cd += np.polyval([ 76.30335562, -61.95312041, 16.6308463, 1.04415875], CL_ratio)
+        Cd += np.polyval([ 0.11488358, -0.04715969, -0.04596621,  0.03125494], CL_ratio)
         return [Cd, CL/Cd, Cdo, e]
     else:                 #flaps in landing config
-        Cd += np.polyval([108.18261739,-67.42614684,16.39380699,1.99475706], CL_ratio)
+        Cd += np.polyval([ 0.08532904,  0.00289963, -0.06521609,  0.04009689], CL_ratio)
         return [Cd, CL / Cd, Cdo, e]
 

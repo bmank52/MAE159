@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="Created Propulsion Module">
-      <change afterPath="$PROJECT_DIR$/Cruise Thrust Required.py" afterDir="false" />
+    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="Created Cruise Thrust Required module, updated default vales to drag constant CDo and Propulsion">
+      <change afterPath="$PROJECT_DIR$/Climb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Propulsion.py" beforeDir="false" afterPath="$PROJECT_DIR$/Propulsion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drag_constant_Cdo.py" beforeDir="false" afterPath="$PROJECT_DIR$/drag_constant_Cdo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plots/JT9D_SL.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Plots/JT9D_SL.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plotting and Surrogate Modeling.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plotting and Surrogate Modeling.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +46,7 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.Climb.executor": "Run",
     "Python.Cruise Thrust Required.executor": "Run",
     "Python.Landing Field Length.executor": "Run",
     "Python.Mdd_constraint.executor": "Run",
@@ -98,7 +99,7 @@
       <workItem from="1769390794089" duration="15363000" />
       <workItem from="1769465884368" duration="10000" />
       <workItem from="1769560540441" duration="7119000" />
-      <workItem from="1770080610320" duration="2651000" />
+      <workItem from="1770080610320" duration="8963000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -252,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769561644129</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Created Cruise Thrust Required module, updated default vales to drag constant CDo and Propulsion">
+      <option name="closed" value="true" />
+      <created>1770085033910</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1770085033910</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,7 +294,8 @@
     <MESSAGE value="Moved file location of approach speed module" />
     <MESSAGE value="Created Landing Field Length Module" />
     <MESSAGE value="Created Propulsion Module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Propulsion Module" />
+    <MESSAGE value="Created Cruise Thrust Required module, updated default vales to drag constant CDo and Propulsion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Cruise Thrust Required module, updated default vales to drag constant CDo and Propulsion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -299,15 +309,16 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MAE159$approach_speed.coverage" NAME="approach speed Coverage Results" MODIFIED="1769399541543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Plots" />
     <SUITE FILE_PATH="coverage/MAE159$fuel_weight_ratio_estimate.coverage" NAME="fuel_weight_ratio_estimate Coverage Results" MODIFIED="1769399451712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$Plotting_and_Surrogate_Modeling.coverage" NAME="Plotting and Surrogate Modeling Coverage Results" MODIFIED="1769561422187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$drag_constant_Cdo.coverage" NAME="drag_constant_Cdo Coverage Results" MODIFIED="1770084318796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Plotting_and_Surrogate_Modeling.coverage" NAME="Plotting and Surrogate Modeling Coverage Results" MODIFIED="1770092221419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Takeoff_field_length.coverage" NAME="Takeoff_field_length Coverage Results" MODIFIED="1769677628602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$main.coverage" NAME="main Coverage Results" MODIFIED="1767756795729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Climb.coverage" NAME="Climb Coverage Results" MODIFIED="1770091873664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$approach_speed.coverage" NAME="approach speed Coverage Results" MODIFIED="1769399541543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Plots" />
     <SUITE FILE_PATH="coverage/MAE159$Mdd_constraint.coverage" NAME="Mdd_constraint Coverage Results" MODIFIED="1768785400890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Cruise_Thrust_Required.coverage" NAME="Cruise Thrust Required Coverage Results" MODIFIED="1770084950042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Propulsion.coverage" NAME="Propulsion Coverage Results" MODIFIED="1770084942625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$main.coverage" NAME="main Coverage Results" MODIFIED="1767756795729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Landing_Field_Length.coverage" NAME="Landing Field Length Coverage Results" MODIFIED="1769406151917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Plot_Testing.coverage" NAME="Plot Testing Coverage Results" MODIFIED="1768271879760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
