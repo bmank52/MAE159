@@ -1,7 +1,7 @@
 import numpy as np
 
 def propulsion(alt, Ma):
-    T_max_exist_SLSD = np.polyval([ -2.32298858,  38.88677337, -47.75554851,  45.36765101], Ma) * 1000
+    T_max_exist_SLSD = np.polyval([ -2.32298858,  38.88677337, -47.75554851,  45.36765101], 0) * 1000
     if alt <=15000:
         Thrust_max_15k = np.polyval([12.8202115,  -35.99705866,  39.94062197, -28.2682791,   25.54563471], Ma) * 1000
         Thrust_max_alt = np.interp(alt, [0, 15000], [T_max_exist_SLSD, Thrust_max_15k])

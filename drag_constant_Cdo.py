@@ -1,6 +1,6 @@
 import numpy as np
 
-def drag_constant_Cdo(CL, CL_max, AR, gear_down, flaps, M, M_cruise, Cdo):    #input CL, AR, t/f, TO/LND/f, M, M_cruise, Cdo
+def drag_constant_Cdo(CL, CL_max, AR, gear_down, flaps, M, M_cruise, Cdo=0.015):    #input CL, AR, t/f, TO/LND/f, M, M_cruise, Cdo
     e = 1 / (1.035 + .38 * Cdo * np.pi *AR)
     Cd = Cdo + CL ** 2 / (np.pi * e * AR)
     CL_ratio = CL / CL_max
