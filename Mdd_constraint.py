@@ -4,7 +4,7 @@ import numpy as np
 ###Takes inputs W/S, M cruise, altitude, sweep, AR and outputs t2c, CL max clean/LND/TO
 
 def Mdd_constraint(W_S, M_cruise, alt, sweep, AR):  #inputs wing loading, cruise mach, altitude, sweep, aspect ratio
-    V_cruise = M_cruise * Atmosphere(alt * 0.3048).speed_of_sound[0] * 3.28 # Converts M to ft/s
+    V_cruise = M_cruise * Atmosphere(alt * 0.3048).speed_of_sound[0] * 3.28084 # Converts M to ft/s
     W_S_start_cruise = 0.965 * W_S # Wing Loading at the start of cruise based on wing loading at TO (lb/ft^2)
     CL_start_cruise = 2 * W_S_start_cruise / (Atmosphere(alt * 0.3048).density[0] * 0.00194032 * V_cruise ** 2)  # Solves for CL, coverts density to slug/ft^3
     Mdiv_cruise = M_cruise + 0.004

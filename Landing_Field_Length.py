@@ -16,7 +16,7 @@ def calc_landing_FL_W_S(W_S,  M_cruise, sweep, AR, density, alt, Cdo, LNDFL):
 
     ##Gnd roll
     CL_lnd_gnd_roll = 0.1
-    Cd_lnd_roll = drag_constant_Cdo(CL_lnd_gnd_roll, AR, True, 'LND', 0, M_cruise, Cdo)
+    Cd_lnd_roll = drag_constant_Cdo(CL_lnd_gnd_roll, AR, True, 'LND', 0, M_cruise, Cdo)[0]
     mu = 0.22 #Friction coefficent
     c3 = 1/ (density * 32.2 * (mu * CL_lnd_gnd_roll - Cd_lnd_roll))
     c4 = -mu * CL_max_LND / (mu * CL_max_LND + 1.3225 * (mu*CL_lnd_gnd_roll - Cd_lnd_roll))
@@ -25,7 +25,7 @@ def calc_landing_FL_W_S(W_S,  M_cruise, sweep, AR, density, alt, Cdo, LNDFL):
     W_S_TO = W_S_LND / (1-(1-0.45) *  fuel_weight_ratio_estimate(7000, M_cruise, alt))
     return W_S_TO
 
-def iterate_W_S_LND(W_S,  M_cruise, sweep, AR, alt, Cdo, LNDFL, temp_delta):
+def iterate_W_S_LND(W_S,  M_cruise, sweep, AR, alt=0, Cdo=0.015, LNDFL=9000, temp_delta=22.6):
     densityHot = Atmosphere(0).pressure[0] / 287 / (Atmosphere(0).temperature[0] + temp_delta) * 0.00194032  # convert to lbf/ft^3
     W_S_new = calc_landing_FL_W_S(W_S, M_cruise, sweep, AR, densityHot, alt, Cdo, LNDFL)
 
