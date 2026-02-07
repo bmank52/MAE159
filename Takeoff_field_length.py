@@ -36,3 +36,4 @@ def takeoff_field_length(W_S, sweep, AR, n_eng=2, M_cruise=0.85, alt=35000, rang
     return T2W
 
 
+#print(takeoff_field_length(100, 35, 10, 2, 0.82, 35000, 3000, 6000))

@@ -35,7 +35,7 @@ def iterate_W_S_LND(W_S,  M_cruise, sweep, AR, alt=0, Cdo=0.015, LNDFL=9000, max
 
     return W_S
 
-print(iterate_W_S_LND(130, 0.82, 35, 10, 35000, 0.015, 6000, 0.4, 3000))
+#print(iterate_W_S_LND(130, 0.82, 35, 10, 35000, 0.015, 6000, 0.4, 3000))
 
 
 
