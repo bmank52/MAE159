@@ -26,5 +26,5 @@ def iterate_W_S_approach(W_S, M_cruise, sweep, AR, Vapp, range, temp_delta=22.6,
     return W_S_new
 
 
-%print(iterate_W_S_approach(130, 0.82, 35, 10, 130, 3000, 22.6, 35000, 0.4))
+#print(iterate_W_S_approach(130, 0.82, 35, 10, 130, 3000, 22.6, 35000, 0.4))
 

@@ -22,11 +22,15 @@ cruise_alt = 35000 #ft
 max_landing_fuel_ratio = 0.45
 b_limit = 214 #ft
 temp_delta = 22.6 #hot day added temp in K
+Cdo = 0.015
+n_eng = 2
+ceiling_alt = 40000
 
 ### Input Ranges
-W_S = 140
+W_S_guess = 140
 sweep = 35
 AR = 10
+W_S_range = np.linspace(80, 180, 25)
 
 
 
@@ -92,14 +96,67 @@ Landing_go_around = {
 }
 
 ### Constraint Diagram
-plt.figure()
-W_S_Approach = iterate_W_S_approach(W_S, M_cruise, sweep, AR, landing_approach_speed, temp_delta, 0)
+plt.figure(figsize=(10,6))
+W_S_Approach = iterate_W_S_approach(W_S_guess, M_cruise, sweep, AR, landing_approach_speed, range, temp_delta, cruise_alt, max_landing_fuel_ratio) #calc approach W_S limit
+W_S_LNDFL = iterate_W_S_LND(W_S_guess, M_cruise, sweep, AR, cruise_alt, Cdo, field_length, max_landing_fuel_ratio, range) #calc landing W_S limit
+T_W_TOFL = [takeoff_field_length(ws, sweep, AR, n_eng, M_cruise, cruise_alt, range, field_length)
+            for ws in W_S_range] #calc range of T_W for TOFL based on a range of W_S
+T_W_Cruise_Thrust = [Cruise_Thrust_Required(ws, AR, M_cruise, cruise_alt)
+                     for ws in W_S_range]
+T_W_service_ceiling = [service_ceiling(ws, ceiling_alt, cruise_alt, AR, M_cruise)
+                       for ws in W_S_range]
+T_W_climb_first = [climb_gradient(ws, first_TO_climb, range, AR, sweep, M_cruise, cruise_alt)
+                   for ws in W_S_range]
+T_W_climb_second = [climb_gradient(ws, second_TO_climb, range, AR, sweep, M_cruise, cruise_alt)
+                   for ws in W_S_range]
+T_W_climb_third = [climb_gradient(ws, third_TO_climb, range, AR, sweep, M_cruise, cruise_alt)
+                   for ws in W_S_range]
+T_W_climb_approach =[climb_gradient(ws, approach_go_around, range, AR, sweep, M_cruise, cruise_alt)
+                   for ws in W_S_range]
+T_W_climb_landing =[climb_gradient(ws, Landing_go_around, range, AR, sweep, M_cruise, cruise_alt)
+                   for ws in W_S_range]
 
-plt.axvline(x = W_S_Approach, color = 'red', label = 'Approach')
+plt.axvline(x = W_S_Approach, color = 'red', label = 'Approach') #plt approach limit
+plt.axvline(x = W_S_LNDFL, color = 'blue', label = 'LNDFL') #plt landing limit
+plt.plot(W_S_range, T_W_TOFL, color = 'green', label = 'TOFL')
+plt.plot(W_S_range, T_W_Cruise_Thrust, color = 'c', label = 'CRUISE Thrust Required')
+plt.plot(W_S_range, T_W_service_ceiling, color = 'm', label = 'Service ceiling')
+plt.plot(W_S_range, T_W_climb_first, color = 'y', label = 'First climb')
+plt.plot(W_S_range, T_W_climb_second, ls='dashed' ,color = 'r', label = 'Second climb')
+plt.plot(W_S_range, T_W_climb_third, color = 'k', label = 'Third climb')
+plt.plot(W_S_range, T_W_climb_approach, ls = 'dashed', color = 'b', label = 'Approach')
+plt.plot(W_S_range, T_W_climb_landing, ls = 'dashed', color = 'g', label = 'Landing')
+
+#hatch marks
+h_depth = 0.05 #depth of marks
+plt.fill_betweenx([0, 1], W_S_Approach, W_S_Approach + 5,
+                 color='r', alpha=0.3, hatch='//', label='_nolegend_')
+plt.fill_betweenx([0, 1], W_S_LNDFL, W_S_LNDFL + 5,
+                 color='b', alpha=0.3, hatch='\\\\', label='_nolegend_')
+plt.fill_between(W_S_range, T_W_TOFL, [y - h_depth for y in T_W_TOFL],
+                 color='g', alpha=0.3, hatch='///', label='_nolegend_')
+plt.fill_between(W_S_range, T_W_Cruise_Thrust, [y - h_depth for y in T_W_Cruise_Thrust],
+                 color='c', alpha=0.3, hatch='///', label='_nolegend_')
+plt.fill_between(W_S_range, T_W_service_ceiling, [y - h_depth for y in T_W_service_ceiling],
+                 color='m', alpha=0.3, hatch='///', label='_nolegend_')
+plt.fill_between(W_S_range, T_W_climb_first, [y - h_depth for y in T_W_climb_first],
+                 color='y', alpha=0.3, hatch='///', label='_nolegend_')
+plt.fill_between(W_S_range, T_W_climb_second, [y - h_depth for y in T_W_climb_second],
+                 color='r', alpha=0.3, hatch='///', label='_nolegend_')
+plt.fill_between(W_S_range, T_W_climb_third, [y - h_depth for y in T_W_climb_third],
+                 color='k', alpha=0.3, hatch='///', label='_nolegend_')
+plt.fill_between(W_S_range, T_W_climb_approach, [y - h_depth for y in T_W_climb_approach],
+                 color='b', alpha=0.3, hatch='///', label='_nolegend_')
+plt.fill_between(W_S_range, T_W_climb_landing, [y - h_depth for y in T_W_climb_landing],
+                 color='g', alpha=0.3, hatch='///', label='_nolegend_')
+
+
 
 plt.legend()
-plt.xlabel('W_S')
-plt.ylabel('T_W')
+plt.xlabel(r'$\frac{W}{S} \ [lb/ft^2]$')
+plt.ylabel(r'$\frac{T}{W}$')
+plt.title(f'Design Envelope for Sweep = {sweep} and AR = {AR}')
+plt.grid()
 plt.show()
 
 
@@ -111,10 +168,4 @@ TOFL = 6000
 range = 3000
 max_landing_fuel_ratio = 0.4
 
-#print(iterate_W_S_approach(W_S, M_cruise, sweep, AR, Vapp))
-#print(iterate_W_S_LND(W_S, M_cruise, sweep, AR, 0, 0.015, TOFL))
-print(takeoff_field_length(W_S, sweep, AR, 2, M_cruise, cruise_alt, range, TOFL))
-print(Cruise_Thrust_Required(W_S, AR, M_cruise))
-print(service_ceiling(W_S, 40000, cruise_alt, AR, M_cruise))
-print(climb_gradient(W_S, first_TO_climb, range, AR, sweep, M_cruise))
-print(climb_gradient(W_S, approach_go_around, range, AR, sweep, M_cruise))
+
