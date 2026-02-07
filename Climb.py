@@ -107,10 +107,17 @@ def climb_gradient(W_S, segment, range=7000, AR = 10, Sweep = 35, M_cruise = 0.8
     else:
         n_eng_ratio = 1
 
-    lapse = propulsion(alt, M)[1]
+    if segment == third_TO_climb or segment == approach_go_around:
+        Thrust_climb_SL = np.polyval(Max_Climb_SL, M) * 1000
+        Thrust_climb_15k = np.polyval(Max_Climb_15k, M) * 1000
+        Thrust = np.interp(alt, [0, 15000], [Thrust_climb_SL, Thrust_climb_15k])
+    else:
+        Thrust = np.polyval(SL_Dry_TO, M) * 1000
+
+    lapse = Thrust / np.polyval(SL_Dry_TO, 0) / 1000
 
     T_W = T_W_climb * W_W_TO / lapse * n_eng_ratio
     return T_W
 
-
-
+#print(climb_gradient(100, first_TO_climb, 3000, 10, 35, 0.82))
+#print(climb_gradient(100, approach_go_around, 3000, 10, 35, 0.82))

@@ -13,3 +13,5 @@ def Cruise_Thrust_Required(W_S, AR, M_cruise = 0.85, h = 35000):
     T_W = 0.965 / L_D / lapse
     return T_W
 
+
+#print(Cruise_Thrust_Required(100, 10, 0.82))
