@@ -46,5 +46,5 @@ def service_ceiling(W_S, h_ceiling, h_cruise=35000, AR = 10, M_cruise = 0.85, RO
 
     return T_W
 
-#print(service_ceiling(100, 40000, 35000, 10, 0.82))
+#print(service_ceiling(100, 40000, 35000, 10, 0.85))
 

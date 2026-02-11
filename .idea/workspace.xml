@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="Made updates to repair climb module">
+    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="Plotting design envelope">
+      <change afterPath="$PROJECT_DIR$/Calc CDo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Span_Limit_Boundary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Climb.py" beforeDir="false" afterPath="$PROJECT_DIR$/Climb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cruise_Thrust_Required.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cruise_Thrust_Required.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Field_Length.py" beforeDir="false" afterPath="$PROJECT_DIR$/Landing_Field_Length.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plotting and Surrogate Modeling.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plotting and Surrogate Modeling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service_Ceiling.py" beforeDir="false" afterPath="$PROJECT_DIR$/Service_Ceiling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Takeoff_field_length.py" beforeDir="false" afterPath="$PROJECT_DIR$/Takeoff_field_length.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/approach_speed.py" beforeDir="false" afterPath="$PROJECT_DIR$/approach_speed.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -103,7 +112,7 @@
       <workItem from="1769465884368" duration="10000" />
       <workItem from="1769560540441" duration="7119000" />
       <workItem from="1770080610320" duration="12414000" />
-      <workItem from="1770409162767" duration="20072000" />
+      <workItem from="1770409162767" duration="31785000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -313,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770447508325</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Plotting design envelope">
+      <option name="closed" value="true" />
+      <created>1770504314113</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1770504314113</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +370,8 @@
     <MESSAGE value="Made updates to repair LNDFL module" />
     <MESSAGE value="Made updates to repair TOFL module" />
     <MESSAGE value="Made updates to repair climb module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made updates to repair climb module" />
+    <MESSAGE value="Plotting design envelope" />
+    <option name="LAST_COMMIT_MESSAGE" value="Plotting design envelope" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -368,17 +386,17 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MAE159$fuel_weight_ratio_estimate.coverage" NAME="fuel_weight_ratio_estimate Coverage Results" MODIFIED="1769399451712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$Plotting_and_Surrogate_Modeling.coverage" NAME="Plotting and Surrogate Modeling Coverage Results" MODIFIED="1770092221419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$drag_constant_Cdo.coverage" NAME="drag_constant_Cdo Coverage Results" MODIFIED="1770092298717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$Takeoff_field_length.coverage" NAME="Takeoff_field_length Coverage Results" MODIFIED="1770446305654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$Climb.coverage" NAME="Climb Coverage Results" MODIFIED="1770447479821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$main.coverage" NAME="main Coverage Results" MODIFIED="1770504234171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$approach_speed.coverage" NAME="approach_speed Coverage Results" MODIFIED="1770441548752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Plotting_and_Surrogate_Modeling.coverage" NAME="Plotting and Surrogate Modeling Coverage Results" MODIFIED="1770759409126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Takeoff_field_length.coverage" NAME="Takeoff_field_length Coverage Results" MODIFIED="1770619169156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$main.coverage" NAME="main Coverage Results" MODIFIED="1770619018043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Climb.coverage" NAME="Climb Coverage Results" MODIFIED="1770619261364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$approach_speed.coverage" NAME="approach_speed Coverage Results" MODIFIED="1770619138727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Mdd_constraint.coverage" NAME="Mdd_constraint Coverage Results" MODIFIED="1768785400890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$Cruise_Thrust_Required.coverage" NAME="Cruise_Thrust_Required Coverage Results" MODIFIED="1770446389430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Cruise_Thrust_Required.coverage" NAME="Cruise_Thrust_Required Coverage Results" MODIFIED="1770619192279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Propulsion.coverage" NAME="Propulsion Coverage Results" MODIFIED="1770446300305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$Landing_Field_Length.coverage" NAME="Landing_Field_Length Coverage Results" MODIFIED="1770445651761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Landing_Field_Length.coverage" NAME="Landing_Field_Length Coverage Results" MODIFIED="1770618978379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Plot_Testing.coverage" NAME="Plot Testing Coverage Results" MODIFIED="1768271879760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$Service_Ceiling.coverage" NAME="Service_Ceiling Coverage Results" MODIFIED="1770446473069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Service_Ceiling.coverage" NAME="Service_Ceiling Coverage Results" MODIFIED="1770619225316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -30,7 +30,7 @@ ceiling_alt = 40000
 W_S_guess = 140
 sweep = 35
 AR = 10
-W_S_range = np.linspace(80, 180, 25)
+W_S_range = np.linspace(100, 150, 25)
 
 
 

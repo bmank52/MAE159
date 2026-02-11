@@ -25,7 +25,7 @@ def calc_landing_FL_W_S(W_S,  M_cruise, sweep, AR, density, alt, Cdo, LNDFL, max
     W_S_TO = W_S_LND / (1-(1- max_fuel_LND_ratio) *  fuel_weight_ratio_estimate(range, M_cruise, alt))
     return W_S_TO
 
-def iterate_W_S_LND(W_S,  M_cruise, sweep, AR, alt=0, Cdo=0.015, LNDFL=9000, max_fuel_LND_ratio=0.45, range = 7000, temp_delta=22.6):
+def iterate_W_S_LND(W_S,  M_cruise, sweep, AR, alt=35000, Cdo=0.015, LNDFL=9000, max_fuel_LND_ratio=0.45, range = 7000, temp_delta=22.6):
     densityHot = Atmosphere(0).pressure[0] / 287 / (Atmosphere(0).temperature[0] + temp_delta) * 0.00194032  # convert to lbf/ft^3
     W_S_new = calc_landing_FL_W_S(W_S, M_cruise, sweep, AR, densityHot, alt, Cdo, LNDFL, max_fuel_LND_ratio, range)
 
@@ -35,7 +35,7 @@ def iterate_W_S_LND(W_S,  M_cruise, sweep, AR, alt=0, Cdo=0.015, LNDFL=9000, max
 
     return W_S
 
-#print(iterate_W_S_LND(130, 0.82, 35, 10, 35000, 0.015, 6000, 0.4, 3000))
+print(iterate_W_S_LND(130, 0.85, 35, 10, 35000, 0.015, 9000, 0.45, 7000))
 
 
 
