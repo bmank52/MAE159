@@ -110,5 +110,5 @@ def file_plot_type_3 (f, xLabel, yLabel, title, deg):   #Plots and creates polyf
 #file_plot_type_1('Plots/JT9D_Max_Thrust_Conditions.csv', 'Mach', 'Thrust (1k lbs)', 'JT9D Max Thrust 35k ft', 4)
 #file_plot_type_1('Plots/JT9D_45000 ft.csv', 'Mach', 'Thrust (1k lbs)', 'JT9D 45k ft', 4)
 #file_plot_type_1('Plots/JT9D Max Thrust 15k.csv', 'Mach', 'Thrust (1k lbs)', 'JT9D 15k ft Max Thrust', 4)
-file_plot_type_3('Plots/Cf vs Re.csv', 'Re', 'Cf', 'Shevelle 11.2', 2)
-file_plot_type_1('Plots/Shevell 11.4 Form Factor vs Fineness.csv', 'Fineness Ratio L/D', 'Form Factor K', 'Shevelle 11.4', 3)
+#file_plot_type_3('Plots/Cf vs Re.csv', 'Re', 'Cf', 'Shevelle 11.2', 2)
+#file_plot_type_1('Plots/Shevell 11.4 Form Factor vs Fineness.csv', 'Fineness Ratio L/D', 'Form Factor K', 'Shevelle 11.4', 3)
