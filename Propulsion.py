@@ -1,4 +1,6 @@
 import numpy as np
+from scipy.interpolate import LinearNDInterpolator
+import pandas as pd
 
 def propulsion(alt, Ma):
     T_max_exist_SLSD = np.polyval([ -2.32298858,  38.88677337, -47.75554851,  45.36765101], 0) * 1000
@@ -49,3 +51,83 @@ def propulsion(alt, Ma):
         """
     lapse = Thrust_max_alt / T_max_exist_SLSD
     return [Thrust_max_alt,lapse]
+
+def calc_TSFC(M, T, f):
+    df = pd.read_csv(f, header=None)
+    all_data = []
+    for i in range(0, df.shape[1], 2):
+        tsfc_val = float(df.iloc[0, i])
+        mach_cords = pd.to_numeric(df.iloc[2:, i], errors='coerce')
+        thrust_coords = pd.to_numeric(df.iloc[2:, i + 1], errors='coerce')
+
+        temp_df = pd.DataFrame({
+            'mach': mach_cords,
+            'thrust': thrust_coords,
+            'tsfc': tsfc_val,
+        }).dropna()
+
+        all_data.append(temp_df)
+
+    final_df = pd.concat(all_data, ignore_index=True)
+
+    # Prepare inputs (Mach, Thrust) and targets (TSFC)
+    points = final_df[['mach', 'thrust']].values
+    values = final_df['tsfc'].values
+
+    # Build the interpolator
+    # This creates a surface representing TSFC over the Mach-Thrust plane
+    get_tsfc = LinearNDInterpolator(points, values)
+    return float(get_tsfc(M, T))
+
+def TSFC_at_alt(M, T, alt):
+    T = T/1000
+    if alt <= 15000:
+        TSFC_SL = calc_TSFC(M, T, 'Plots/JT9D_SL_TSFC.csv')
+        TSFC_15k = calc_TSFC(M, T, 'Plots/JT9D 15k.csv')
+        TSFC = np.interp(alt, [0, 15000], [TSFC_SL, TSFC_15k])
+    elif alt <= 35000:
+
+        TSFC_15k = calc_TSFC(M, T, 'Plots/JT9D 15k.csv')
+        TSFC_35k = calc_TSFC(M, T, 'Plots/JT9D 35k.csv')
+        TSFC = np.interp(alt, [15000, 35000], [TSFC_15k, TSFC_35k])
+
+    return TSFC
+
+
+# --- TESTING BLOCK ---
+if __name__ == "__main__":
+    print("=== Propulsion Module Diagnostic Test ===")
+
+    # Define your design parameters here for the test
+    n_eng = 2
+    engine_scaling = 1.0  # Change this to your S factor (e.g. 1.1 or 1.5)
+
+    print(f"\nConfiguration: {n_eng} Engines | Scaling Factor: {engine_scaling}")
+
+    test_cases = [
+        # (Mach, Total_Aircraft_Thrust, Alt)
+        (0.6, 15000, 17500),
+        (0.8, 14000, 35000),
+    ]
+
+    for m, t_total, a in test_cases:
+        # Calculate thrust per engine (unscaled) for lookup
+        t_per_eng_unscaled = t_total / (n_eng * engine_scaling)
+
+        # Check Max Available
+        t_max_unscaled, _ = propulsion(a, m)
+        t_max_scaled_total = t_max_unscaled * n_eng * engine_scaling
+
+        print(f"\n--- Testing Alt: {a}ft, Mach: {m} ---")
+        print(f"Total Aircraft Thrust Required: {t_total:.1f} lbs")
+        print(f"Total Aircraft Max Available: {t_max_scaled_total:.1f} lbs")
+
+        if t_total > t_max_scaled_total:
+            print(">> ERROR: Thrust Required exceeds Aircraft Capability!")
+
+        # Perform lookup
+        result = TSFC_at_alt(m, t_per_eng_unscaled, a)
+        print(f"Lookup Thrust (Unscaled, Per-Eng): {t_per_eng_unscaled:.1f} lbs")
+        print(f"TSFC Result: {result}")
+
+    print("\n==========================================")
