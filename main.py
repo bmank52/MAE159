@@ -4,13 +4,8 @@ import scipy as sp
 import pandas as pd
 from fontTools.merge.util import first
 
-from approach_speed import iterate_W_S_approach
-from Landing_Field_Length import iterate_W_S_LND
-from Takeoff_field_length import takeoff_field_length
-from Cruise_Thrust_Required import Cruise_Thrust_Required
-from Service_Ceiling import service_ceiling
-from Climb import climb_gradient
 from Determine_performance_parameters import determine_performance_parameters
+from Converge_Mission import create_TW_WS_grid
 
 ### Design Specs ###
 n_pax = 250
@@ -34,13 +29,11 @@ AR = 10
 W_S_range = np.linspace(100, 150, 25)
 
 determine_performance_parameters(W_S_guess, M_cruise, W_S_range, sweep, AR, Cdo)
+W_S_range, T_W_range, W_TO_grid = create_TW_WS_grid(10, 10, 100, 150, .2, .8, sweep, AR)
 
-M_cruise = 0.82
-AR = 10
-sweep = 35
-Vapp = 130
-TOFL = 6000
-range = 3000
-max_landing_fuel_ratio = 0.4
+CS = plt.contour(W_S_range, T_W_range, W_TO_grid, levels=10, cmap='viridis', linestyles='--')
+plt.clabel(CS, inline=True, fontsize=10, fmt='%1.0f lbs')
+plt.title(f'Constraint Diagram & $W_{{TO}}$ Contours (Sweep={sweep}, AR={AR})')
+plt.show()
 
 

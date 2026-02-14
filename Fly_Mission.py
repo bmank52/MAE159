@@ -99,36 +99,3 @@ def fly_mission(W_TO, h_cruise, AR, Sref, T_W, L_f, D_f, mac, sweep, t2c, Wf_Wto
     W2_W1_cruise = fly_cruise(W_TO, Wf_Wto, T_W, Sref, AR, L_f, D_f, mac, sweep, t2c, T_SLSD, range, M_cruise, h_cruise)
     Wf_Wto = 1 - W1_W0_climb * W2_W1_cruise
     return Wf_Wto
-
-
-
-
-W_TO_test = 350000      # Takeoff Weight (lbs)
-h_cruise_test = 35000   # Cruise Altitude (ft)
-AR_test = 9.0           # Aspect Ratio
-Sref_test = 3000        # Wing Reference Area (sq ft)
-T_W_test = 0.28         # Thrust-to-Weight Ratio
-L_f_test = 180          # Fuselage Length (ft)
-D_f_test = 18           # Fuselage Diameter (ft)
-mac_test = 16           # Mean Aerodynamic Chord (ft)
-sweep_test = 31.5       # Wing Sweep (degrees)
-t2c_test = 0.12         # Thickness-to-chord ratio
-Wf_Wto_guess = 0.3      # Initial Fuel Fraction guess (30%)
-T_SLSD_test = 50000     # Sea Level Static Thrust per engine (lbs)
-range_nm_test = 4000    # Mission Range (nmi)
-M_cruise_test = 0.80    # Cruise Mach
-# --- Full Mission Test ---
-print("\n--- Starting Full Mission Test ---")
-try:
-    Wf_Wto_final = fly_mission(
-        W_TO_test, h_cruise_test, AR_test, Sref_test, T_W_test,
-        L_f_test, D_f_test, mac_test, sweep_test, t2c_test,
-        Wf_Wto_guess, T_SLSD_test, range_nm_test, M_cruise_test
-    )
-    print(f"Success! Final Fuel Fraction: {Wf_Wto_final:.4f}")
-
-except Exception as e:
-    import traceback
-
-    print("Full Mission failed. Details:")
-    traceback.print_exc()

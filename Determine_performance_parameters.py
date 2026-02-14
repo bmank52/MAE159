@@ -135,4 +135,3 @@ def determine_performance_parameters(W_S_guess, M_cruise, W_S_range, sweep, AR, 
     plt.ylabel(r'$\frac{T}{W}$')
     plt.title(f'Design Envelope for Sweep = {sweep} and AR = {AR}')
     plt.grid()
-    plt.show()
