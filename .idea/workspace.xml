@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="Made multiple corrections and changes to create fly mission module. Added ability to interp TSFC in propulsion module">
+    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="Finished converge mission, plotting iso weight contours">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Converge_Mission.py" beforeDir="false" afterPath="$PROJECT_DIR$/Converge_Mission.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Converge_TO_weight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Converge_TO_weight.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Determine_performance_parameters.py" beforeDir="false" afterPath="$PROJECT_DIR$/Determine_performance_parameters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fly_Mission.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fly_Mission.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Span_Limit_Boundary.py" beforeDir="false" afterPath="$PROJECT_DIR$/Span_Limit_Boundary.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +76,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "memory.settings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -110,7 +112,7 @@
       <workItem from="1769560540441" duration="7119000" />
       <workItem from="1770080610320" duration="12414000" />
       <workItem from="1770409162767" duration="32106000" />
-      <workItem from="1770846107792" duration="33859000" />
+      <workItem from="1770846107792" duration="45532000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -360,7 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770973719103</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Finished converge mission, plotting iso weight contours">
+      <option name="closed" value="true" />
+      <created>1771096634539</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1771096634539</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +388,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Installed libraries" />
     <MESSAGE value="Added to github" />
     <MESSAGE value="Created function for plotting data" />
     <MESSAGE value="Added Plts for JT9D" />
@@ -403,7 +412,8 @@
     <MESSAGE value="Created Module Calc Cdo" />
     <MESSAGE value="Created converge TO Wegiht, resize eng, resize geometry" />
     <MESSAGE value="Made multiple corrections and changes to create fly mission module. Added ability to interp TSFC in propulsion module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made multiple corrections and changes to create fly mission module. Added ability to interp TSFC in propulsion module" />
+    <MESSAGE value="Finished converge mission, plotting iso weight contours" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished converge mission, plotting iso weight contours" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -412,6 +422,11 @@
           <url>file://$PROJECT_DIR$/approach_speed.py</url>
           <line>26</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Converge_TO_weight.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -424,7 +439,7 @@
     <SUITE FILE_PATH="coverage/MAE159$Fly_Mission.coverage" NAME="Fly_Mission Coverage Results" MODIFIED="1770973670514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Determine_performance_parameters.coverage" NAME="Determine_performance_parameters Coverage Results" MODIFIED="1771026265210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Climb.coverage" NAME="Climb Coverage Results" MODIFIED="1770619261364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$main.coverage" NAME="main Coverage Results" MODIFIED="1771026910054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$main.coverage" NAME="main Coverage Results" MODIFIED="1771110169830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$approach_speed.coverage" NAME="approach_speed Coverage Results" MODIFIED="1770619138727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Mdd_constraint.coverage" NAME="Mdd_constraint Coverage Results" MODIFIED="1768785400890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Cruise_Thrust_Required.coverage" NAME="Cruise_Thrust_Required Coverage Results" MODIFIED="1770619192279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

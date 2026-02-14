@@ -1,11 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.patheffects as path_effects
 import scipy as sp
 import pandas as pd
-from fontTools.merge.util import first
+
 
 from Determine_performance_parameters import determine_performance_parameters
 from Converge_Mission import create_TW_WS_grid
+from Span_Limit_Boundary import span_limit_boundary
 
 ### Design Specs ###
 n_pax = 250
@@ -26,14 +28,21 @@ ceiling_alt = 40000
 W_S_guess = 140
 sweep = 35
 AR = 10
-W_S_range = np.linspace(100, 150, 25)
+W_S_range = np.linspace(80, 150, 25)
 
 determine_performance_parameters(W_S_guess, M_cruise, W_S_range, sweep, AR, Cdo)
-W_S_range, T_W_range, W_TO_grid = create_TW_WS_grid(10, 10, 100, 150, .2, .8, sweep, AR)
+W_S_range, T_W_range, W_TO_grid = create_TW_WS_grid(5, 5, 80, 150, .1, .7, sweep, AR)
 
-CS = plt.contour(W_S_range, T_W_range, W_TO_grid, levels=10, cmap='viridis', linestyles='--')
+CS = plt.contour(W_S_range, T_W_range, W_TO_grid.T, levels=15, cmap='viridis', linestyles='--')
 plt.clabel(CS, inline=True, fontsize=10, fmt='%1.0f lbs')
 plt.title(f'Constraint Diagram & $W_{{TO}}$ Contours (Sweep={sweep}, AR={AR})')
+
+
+ws_span, tw_span = span_limit_boundary(W_S_range, T_W_range, W_TO_grid, AR)
+uptick_effect = [path_effects.Normal(), path_effects.TickedStroke(angle=60, length=1, spacing=10)]
+plt.plot(ws_span, tw_span, color='pink', linestyle='-', linewidth=2, label='Span Limit Boundary', path_effects=uptick_effect)
+plt.ylim([0, .7])
+plt.legend(loc='upper left')
 plt.show()
 
 

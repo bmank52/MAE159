@@ -24,10 +24,6 @@ def converge_fuel_ratio(Wf_Wto, W_S, T_W, AR, taper, t2c, sweep, pax, payload, a
 
     return Wf_Wto_new
 
-
-
-
-
 def converge_mission(W_S, T_W, sweep, AR, range=7000, M_cruise=0.85, alt=35000, taper=.35, payload=12000, pax=250):
     Wf_Wto = fuel_weight_ratio_estimate(range, M_cruise, alt) #guess fuel ratio estimate
     t2c, CL_max_LND, CL_max_TO, CL_max_clean = Mdd_constraint(W_S, M_cruise, alt, sweep, AR)

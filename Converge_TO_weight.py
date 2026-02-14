@@ -14,6 +14,7 @@ def calc_TO_weight (Wf_Wto, W_S, W_TO, T_W, AR, taper, t2c, sweep, pax, payload,
 
     W_wing = (.00945 * W_TO ** 1.195 * AR ** .8 * (1 + taper) ** .25 )\
              / ((t2c + 0.03 )** 0.4 * np.cos(np.radians(sweep)) * W_S ** .695) * Kw * n ** .5 #wing weight eqn
+
     L_fuselage = 2.67 * pax/abreast + 0.36*pax + 6.4 #fuselage length
     d_fuselage = 1.75 * abreast + 1.58 * asiles + 1.0 #diameter fuselage
     W_fuselage = .6727 * Kf * W_TO ** .235 * L_fuselage ** .6 * d_fuselage **.72 * n ** .3 #fuselage weight
@@ -43,10 +44,10 @@ def calc_TO_weight (Wf_Wto, W_S, W_TO, T_W, AR, taper, t2c, sweep, pax, payload,
 
 def converge_TO_weight(Wf_Wto, W_S, T_W, AR, taper, t2c, sweep, pax, cargo):
     payload = pax * 215 + cargo  # weight of passengers and cargo
-    W_TO = 660000
+    W_TO = 500000
     W_TO_old = 0# guess weight
 
-    while np.abs(W_TO-W_TO_old) > 10:
+    while np.abs(W_TO - W_TO_old) > 5:
         W_TO_old = W_TO
         W_TO = calc_TO_weight(Wf_Wto, W_S, W_TO_old, T_W, AR, taper, t2c, sweep, pax, payload)
 

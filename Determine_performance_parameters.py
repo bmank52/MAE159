@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.patheffects as path_effects
 
 from approach_speed import iterate_W_S_approach
 from Landing_Field_Length import iterate_W_S_LND
@@ -7,6 +8,7 @@ from Takeoff_field_length import takeoff_field_length
 from Cruise_Thrust_Required import Cruise_Thrust_Required
 from Service_Ceiling import service_ceiling
 from Climb import climb_gradient
+
 
 
 
@@ -96,41 +98,20 @@ def determine_performance_parameters(W_S_guess, M_cruise, W_S_range, sweep, AR, 
     T_W_climb_landing = [climb_gradient(ws, Landing_go_around, range, AR, sweep, M_cruise, cruise_alt)
                          for ws in W_S_range]
 
-    plt.axvline(x=W_S_Approach, color='red', label='Approach')  # plt approach limit
-    plt.axvline(x=W_S_LNDFL, color='blue', label='LNDFL')  # plt landing limit
-    plt.plot(W_S_range, T_W_TOFL, color='green', label='TOFL')
-    plt.plot(W_S_range, T_W_Cruise_Thrust, color='c', label='CRUISE Thrust Required')
-    plt.plot(W_S_range, T_W_service_ceiling, color='m', label='Service ceiling')
-    plt.plot(W_S_range, T_W_climb_first, color='y', label='First climb')
-    plt.plot(W_S_range, T_W_climb_second, ls='dashed', color='r', label='Second climb')
-    plt.plot(W_S_range, T_W_climb_third, color='k', label='Third climb')
-    plt.plot(W_S_range, T_W_climb_approach, ls='dashed', color='b', label='Approach')
-    plt.plot(W_S_range, T_W_climb_landing, ls='dashed', color='g', label='Landing')
+    tick_effect = [path_effects.Normal(), path_effects.TickedStroke(angle=60, length=1, spacing=10)] #for vertical lines
+    plt.axvline(x=W_S_Approach, color='red', label='Approach', path_effects=tick_effect)  # plt approach limit
+    plt.axvline(x=W_S_LNDFL, color='blue', label='LNDFL',path_effects=tick_effect)  # plt landing limit
+    down_tick = [path_effects.Normal(), path_effects.TickedStroke(angle=-60, length=1, spacing=10)] #for curves below design space
+    plt.plot(W_S_range, T_W_TOFL, color='green', label='TOFL', path_effects=down_tick)
+    plt.plot(W_S_range, T_W_Cruise_Thrust, color='c', label='CRUISE Thrust Required', path_effects=down_tick)
+    plt.plot(W_S_range, T_W_service_ceiling, color='m', label='Service ceiling', path_effects=down_tick)
+    plt.plot(W_S_range, T_W_climb_first, color='y', label='First climb', path_effects=down_tick)
+    plt.plot(W_S_range, T_W_climb_second, ls='dashed', color='r', label='Second climb', path_effects=down_tick)
+    plt.plot(W_S_range, T_W_climb_third, color='k', label='Third climb', path_effects=down_tick)
+    plt.plot(W_S_range, T_W_climb_approach, ls='dashed', color='b', label='Approach', path_effects=down_tick)
+    plt.plot(W_S_range, T_W_climb_landing, ls='dashed', color='g', label='Landing', path_effects=down_tick)
 
-    # hatch marks
-    h_depth = 0.05  # depth of marks
-    plt.fill_betweenx([0, 1], W_S_Approach, W_S_Approach + 5,
-                      color='r', alpha=0.3, hatch='//', label='_nolegend_')
-    plt.fill_betweenx([0, 1], W_S_LNDFL, W_S_LNDFL + 5,
-                      color='b', alpha=0.3, hatch='\\\\', label='_nolegend_')
-    plt.fill_between(W_S_range, T_W_TOFL, [y - h_depth for y in T_W_TOFL],
-                     color='g', alpha=0.3, hatch='///', label='_nolegend_')
-    plt.fill_between(W_S_range, T_W_Cruise_Thrust, [y - h_depth for y in T_W_Cruise_Thrust],
-                     color='c', alpha=0.3, hatch='///', label='_nolegend_')
-    plt.fill_between(W_S_range, T_W_service_ceiling, [y - h_depth for y in T_W_service_ceiling],
-                     color='m', alpha=0.3, hatch='///', label='_nolegend_')
-    plt.fill_between(W_S_range, T_W_climb_first, [y - h_depth for y in T_W_climb_first],
-                     color='y', alpha=0.3, hatch='///', label='_nolegend_')
-    plt.fill_between(W_S_range, T_W_climb_second, [y - h_depth for y in T_W_climb_second],
-                     color='r', alpha=0.3, hatch='///', label='_nolegend_')
-    plt.fill_between(W_S_range, T_W_climb_third, [y - h_depth for y in T_W_climb_third],
-                     color='k', alpha=0.3, hatch='///', label='_nolegend_')
-    plt.fill_between(W_S_range, T_W_climb_approach, [y - h_depth for y in T_W_climb_approach],
-                     color='b', alpha=0.3, hatch='///', label='_nolegend_')
-    plt.fill_between(W_S_range, T_W_climb_landing, [y - h_depth for y in T_W_climb_landing],
-                     color='g', alpha=0.3, hatch='///', label='_nolegend_')
 
-    plt.legend()
     plt.xlabel(r'$\frac{W}{S} \ [lb/ft^2]$')
     plt.ylabel(r'$\frac{T}{W}$')
     plt.title(f'Design Envelope for Sweep = {sweep} and AR = {AR}')

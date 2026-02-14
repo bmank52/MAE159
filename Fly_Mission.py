@@ -94,8 +94,40 @@ def fly_cruise(W_TO, Wf_Wto, T_W, Sref, AR, L_f, D_f, mac, sweep, t2c, T_SLSD, r
     W1_W0_cruise = np.exp(- R_cruise * TSFC / (V_kts * L_D)) #Breguet eqn to fuel ratio
     return W1_W0_cruise
 
+
 def fly_mission(W_TO, h_cruise, AR, Sref, T_W, L_f, D_f, mac, sweep, t2c, Wf_Wto, T_SLSD, range=7000, M_cruise=0.85):
-    W1_W0_climb = fly_climb(W_TO, h_cruise, AR, Sref, T_W, L_f, D_f, mac, sweep, t2c, M_cruise)[0]
-    W2_W1_cruise = fly_cruise(W_TO, Wf_Wto, T_W, Sref, AR, L_f, D_f, mac, sweep, t2c, T_SLSD, range, M_cruise, h_cruise)
-    Wf_Wto = 1 - W1_W0_climb * W2_W1_cruise
-    return Wf_Wto
+    # Set convergence parameters
+    tolerance = 1e-5
+    error = 1.0
+    max_iter = 100
+    iteration = 0
+    alpha = 0.5  # Under-relaxation factor (0.5 is safe and stable)
+
+    # Store the initial guess passed into the function
+    current_Wf_Wto = Wf_Wto
+
+    while error > tolerance and iteration < max_iter:
+        previous_Wf_Wto = current_Wf_Wto
+
+        # 1. Run climb to get weight ratio and range penalty
+        W1_W0_climb, range_climb = fly_climb(W_TO, h_cruise, AR, Sref, T_W, L_f, D_f, mac, sweep, t2c, M_cruise)
+
+        # 2. Run cruise using the CURRENT Wf_Wto guess
+        W2_W1_cruise = fly_cruise(W_TO, current_Wf_Wto, T_W, Sref, AR, L_f, D_f, mac, sweep, t2c, T_SLSD, range,
+                                  M_cruise, h_cruise)
+
+        # 3. Calculate the RAW resulting Wf_Wto from these segments
+        new_Wf_Wto_raw = 1 - (W1_W0_climb * W2_W1_cruise)
+
+        # 4. Apply Under-Relaxation
+        # Instead of jumping straight to the new value, we take a partial step
+        current_Wf_Wto = (alpha * new_Wf_Wto_raw) + ((1 - alpha) * previous_Wf_Wto)
+
+        # 5. Check how much the value changed
+        error = abs(current_Wf_Wto - previous_Wf_Wto)
+        iteration += 1
+
+    if iteration >= max_iter:
+        print("Warning: fly_mission reached max iterations without full convergence.")
+
+    return current_Wf_Wto
