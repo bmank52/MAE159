@@ -49,5 +49,5 @@ def create_TW_WS_grid(N_WS, N_TW, lower_WS, upper_WS, lower_TW, upper_TW, sweep,
 
 
 
-
+#print(converge_mission(141, .3, 40, 8))
 

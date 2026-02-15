@@ -68,22 +68,27 @@ def Mdd_constraint(W_S, M_cruise, alt, sweep, AR):  #inputs wing loading, cruise
 
 
     ###Calculate CL max clean using fig 3b###
+    ### Calculate CL max clean using fig 3b ###
     coeff_fig3b = {
-        0: [-321.26954473,   83.11933347,   -2.46418685,    0.94522571],
-        15: [-337.36190906,   88.66983361,   -2.93791529,    0.90236749],
-        35: [-323.19372374,   84.86130085,   -2.69609881,    0.85002387]
+        0: [-321.26954473, 83.11933347, -2.46418685, 0.94522571],
+        15: [-337.36190906, 88.66983361, -2.93791529, 0.90236749],
+        35: [-323.19372374, 84.86130085, -2.69609881, 0.85002387]
     }
 
-    if sweep <=15:
+    if sweep <= 15:
         sweep0 = np.polyval(coeff_fig3b[0], t2c)
         sweep15 = np.polyval(coeff_fig3b[15], t2c)
         CL_max_clean = np.interp(sweep, [0, 15], [sweep0, sweep15])
     else:
+        # Interpolate between 15 and 35 degrees
         sweep15 = np.polyval(coeff_fig3b[15], t2c)
         sweep35 = np.polyval(coeff_fig3b[35], t2c)
-        slope = (sweep35 - sweep)/(35-15)
-        CL_max_clean = sweep15 + slope * (sweep-15)
 
+        # Use np.interp for consistency instead of manual slope calculation
+        # This handles sweeps up to 35 and extrapolates/caps for 40
+        CL_max_clean = np.interp(sweep, [15, 35], [sweep15, sweep35])
+
+    # Safety floor to ensure the plot actually shows up
     if CL_max_clean < 0.1:
         CL_max_clean = 0.1
 

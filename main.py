@@ -26,8 +26,8 @@ ceiling_alt = 40000
 
 ### Input Ranges
 W_S_guess = 140
-sweep = 40
-AR = 10
+sweep = 35
+AR = 8
 W_S_range = np.linspace(80, 150, 25)
 
 determine_performance_parameters(W_S_guess, M_cruise, W_S_range, sweep, AR, Cdo)
