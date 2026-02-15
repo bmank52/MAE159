@@ -15,7 +15,7 @@ def converge_fuel_ratio(Wf_Wto, W_S, T_W, AR, taper, t2c, sweep, pax, payload, a
     Wf_Wto_new = fly_mission(W_TO, alt, AR, S_ref, T_W, L_f, D_f, mac, sweep, t2c, Wf_Wto, T_SLSD_SE, range, M_cruise)
 
     alpha = .5 #for under relaxation
-    while np.abs(Wf_Wto_new - Wf_Wto) > .001:
+    while np.abs(Wf_Wto_new - Wf_Wto) > .01:
         Wf_Wto = alpha * Wf_Wto_new + (1-alpha) * Wf_Wto
         W_TO = converge_TO_weight(Wf_Wto, W_S, T_W, AR, taper, t2c, sweep, pax, payload)
         S_ref, mac, b_ref, Cr, Ct, mac_quarter_c, L_f, D_f = resize_geometry(W_TO, W_S, AR, sweep, taper)

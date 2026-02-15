@@ -98,7 +98,7 @@ def determine_performance_parameters(W_S_guess, M_cruise, W_S_range, sweep, AR, 
     T_W_climb_landing = [climb_gradient(ws, Landing_go_around, range, AR, sweep, M_cruise, cruise_alt)
                          for ws in W_S_range]
 
-    tick_effect = [path_effects.Normal(), path_effects.TickedStroke(angle=60, length=1, spacing=10)] #for vertical lines
+    tick_effect = [path_effects.Normal(), path_effects.TickedStroke(angle=-60, length=1, spacing=10)] #for vertical lines
     plt.axvline(x=W_S_Approach, color='red', label='Approach', path_effects=tick_effect)  # plt approach limit
     plt.axvline(x=W_S_LNDFL, color='blue', label='LNDFL',path_effects=tick_effect)  # plt landing limit
     down_tick = [path_effects.Normal(), path_effects.TickedStroke(angle=-60, length=1, spacing=10)] #for curves below design space

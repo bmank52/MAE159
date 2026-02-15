@@ -78,11 +78,14 @@ def Mdd_constraint(W_S, M_cruise, alt, sweep, AR):  #inputs wing loading, cruise
         sweep0 = np.polyval(coeff_fig3b[0], t2c)
         sweep15 = np.polyval(coeff_fig3b[15], t2c)
         CL_max_clean = np.interp(sweep, [0, 15], [sweep0, sweep15])
-    elif sweep <= 35:
+    else:
         sweep15 = np.polyval(coeff_fig3b[15], t2c)
         sweep35 = np.polyval(coeff_fig3b[35], t2c)
-        CL_max_clean = np.interp(sweep, [15, 35], [sweep15, sweep35])
-    else:
-        CL_max_clean = np.polyval(coeff_fig3b[35], t2c) #Not sure best way to handle his case, for now max out at 35 deg sweep
+        slope = (sweep35 - sweep)/(35-15)
+        CL_max_clean = sweep15 + slope * (sweep-15)
+
+    if CL_max_clean < 0.1:
+        CL_max_clean = 0.1
+
 
     return [t2c, CL_max_LND, CL_max_TO, CL_max_clean]

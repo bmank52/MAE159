@@ -97,7 +97,7 @@ def fly_cruise(W_TO, Wf_Wto, T_W, Sref, AR, L_f, D_f, mac, sweep, t2c, T_SLSD, r
 
 def fly_mission(W_TO, h_cruise, AR, Sref, T_W, L_f, D_f, mac, sweep, t2c, Wf_Wto, T_SLSD, range=7000, M_cruise=0.85):
     # Set convergence parameters
-    tolerance = 1e-5
+    tolerance = 1e-3
     error = 1.0
     max_iter = 100
     iteration = 0

@@ -26,14 +26,14 @@ ceiling_alt = 40000
 
 ### Input Ranges
 W_S_guess = 140
-sweep = 35
+sweep = 40
 AR = 10
 W_S_range = np.linspace(80, 150, 25)
 
 determine_performance_parameters(W_S_guess, M_cruise, W_S_range, sweep, AR, Cdo)
 W_S_range, T_W_range, W_TO_grid = create_TW_WS_grid(5, 5, 80, 150, .1, .7, sweep, AR)
 
-CS = plt.contour(W_S_range, T_W_range, W_TO_grid.T, levels=15, cmap='viridis', linestyles='--')
+CS = plt.contour(W_S_range, T_W_range, W_TO_grid.T, levels=25, cmap='viridis', linestyles='--')
 plt.clabel(CS, inline=True, fontsize=10, fmt='%1.0f lbs')
 plt.title(f'Constraint Diagram & $W_{{TO}}$ Contours (Sweep={sweep}, AR={AR})')
 
