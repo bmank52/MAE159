@@ -10,12 +10,12 @@ def resize_geometry(W, W_S, AR, sweep, pax =250,  taper=0.35):
     y_mac = b_ref / 6 * (2*taper + 1) / (taper + 1) #position of mean chord
     mac_quarter_c = np.tan(np.radians(sweep)) * y_mac + Cr/4
 
-    abreast = 9
-    aisle = 2
+    abreast = 6
+    aisle = 1
     L_f = 2.67 * pax / abreast + .36 * pax + 6.4
     D_f = 1.75 * abreast + 1.58 * aisle + 1.0
 
     return [S_ref, mac, b_ref, Cr, Ct, mac_quarter_c, L_f, D_f]
 
 
-print(resize_geometry(393665, 141, 8,40,  250, 0.35))
+print(resize_geometry(441405, 141, 8,40,  250, 0.35))

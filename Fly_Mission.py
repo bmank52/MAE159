@@ -54,7 +54,7 @@ def fly_climb(W_TO, h_cruise, AR, Sref, T_W, L_f, D_f, mac, sweep, t2c, M_cruise
 
 
 
-def fly_cruise(W_TO, Wf_Wto, T_W, Sref, AR, L_f, D_f, mac, sweep, t2c, T_SLSD, range=7000,  M_cruise=.85, h_cruise=35000):
+def fly_cruise(W_TO, Wf_Wto, T_W, Sref, AR, L_f, D_f, mac, sweep, t2c, T_SLSD, range,  M_cruise=.85, h_cruise=35000):
     atm = Atmosphere(h_cruise * 0.3048)
     Wo = W_TO * .965 #guess weight at cruise start
     W1 = (1 - Wf_Wto) * W_TO #guess weight at end of cruise
@@ -95,7 +95,7 @@ def fly_cruise(W_TO, Wf_Wto, T_W, Sref, AR, L_f, D_f, mac, sweep, t2c, T_SLSD, r
     return W1_W0_cruise
 
 
-def fly_mission(W_TO, h_cruise, AR, Sref, T_W, L_f, D_f, mac, sweep, t2c, Wf_Wto, T_SLSD, range=7000, M_cruise=0.85):
+def fly_mission(W_TO, h_cruise, AR, Sref, T_W, L_f, D_f, mac, sweep, t2c, Wf_Wto, T_SLSD, range, M_cruise=0.85):
     # Set convergence parameters
     tolerance = 1e-3
     error = 1.0

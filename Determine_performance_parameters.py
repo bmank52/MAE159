@@ -12,7 +12,7 @@ from Climb import climb_gradient
 
 
 
-def determine_performance_parameters(W_S_guess, M_cruise, W_S_range, sweep, AR, Cdo, landing_approach_speed=140, range=7000, temp_delta=22.6, cruise_alt=35000, max_landing_fuel_ratio=0.45, field_length=9000, n_eng=2, ceiling_alt=40000):
+def determine_performance_parameters(W_S_guess, M_cruise, W_S_range, sweep, AR, Cdo,range, landing_approach_speed=140, temp_delta=22.6, cruise_alt=35000, max_landing_fuel_ratio=0.45, field_length=9000, n_eng=2, ceiling_alt=40000):
     # climb gradients
     first_TO_climb = {
         "V_Vstall": 1.2,

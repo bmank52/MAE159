@@ -94,3 +94,6 @@ def Mdd_constraint(W_S, M_cruise, alt, sweep, AR):  #inputs wing loading, cruise
 
 
     return [t2c, CL_max_LND, CL_max_TO, CL_max_clean]
+
+
+print(Mdd_constraint(90, .82, 35000, 30, 8))

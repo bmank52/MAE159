@@ -9,32 +9,32 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # --- Aircraft Constants ---
-WTO_design = 390000
-WF_WTO_design = 0.45
+WTO_design = 180000
+WF_WTO_design = 0.25
 h_cruise = 35000
-M_cruise = 0.85
+M_cruise = 0.82
 atm = Atmosphere(h_cruise * 0.3048)
 AR = 8
-Sref = 2900
+Sref = 2000
 T_W = .3
-L_f = 190
-D_f = 15
-mac = 12
-sweep = 40
-t2c = .18
+L_f = 127
+D_f = 13
+mac = 17
+sweep = 30
+t2c = .123
 n_eng = 2
 
 # Engine and Drag setup
 Thrust_1_JT9D, eng_scaling = resize_engine(WTO_design, T_W, n_eng)
-T_SLSD = 61018.08
+T_SLSD = 27000 / n_eng
 Cd0 = calc_CD0(h_cruise, M_cruise, L_f, D_f, Sref, mac, sweep, t2c, T_SLSD)
 
 # Payload definitions
-maxPayload = 90000  # Structural Limit
-designPax = 250
+maxPayload = 50000  # Structural Limit
+designPax = 150
 paxWeight = 250
-designCargo = 12000
-designPayload = designPax * paxWeight + designCargo  # 74,500 lbs
+designCargo = 10000
+designPayload = designPax * paxWeight + designCargo
 
 # Weight Breakdown
 Wf_max = WF_WTO_design * WTO_design  # Assuming design fuel is the tank capacity
@@ -58,6 +58,7 @@ def calcPayloadRange(W_TO, Wf_Wto, Cd0):
     CL = 2 * (W_Cruise / Sref) / (rho_cruise * V_cruise ** 2)
 
     Cd, L_D, _, _ = drag_constant_Cdo(CL, 3, AR, False, False, M_cruise, M_cruise, Cd0)
+    print(L_D)
     Thrust = Cd * 0.5 * rho_cruise * V_cruise ** 2 * Sref
     TSFC = TSFC_at_alt(M_cruise, (Thrust / n_eng / eng_scaling), h_cruise)
 
@@ -65,7 +66,8 @@ def calcPayloadRange(W_TO, Wf_Wto, Cd0):
 
     # Conversions
     conv = 0.000164579
-    total = (climbRange + Range_cruise - (V_cruise * 0.75 * 3600)) * conv - 200
+    #total = (climbRange + Range_cruise - (V_cruise * 0.75 * 3600)) * conv - 200
+    total = (climbRange + Range_cruise) * conv
     return max(0, total)
 
 

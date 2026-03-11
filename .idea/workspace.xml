@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="Added drag Polar Plotting">
-      <change afterPath="$PROJECT_DIR$/Calc_Fuselage_Geometry.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PayloadVsRangePlot.py" afterDir="false" />
+    <list default="true" id="168c6084-5151-4009-acff-5cdac40d64a8" name="Changes" comment="Added payload range diagram and fuselage size modules">
+      <change afterPath="$PROJECT_DIR$/Tail Sizing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calc_Fuselage_Geometry.py" beforeDir="false" afterPath="$PROJECT_DIR$/Calc_Fuselage_Geometry.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Converge_Mission.py" beforeDir="false" afterPath="$PROJECT_DIR$/Converge_Mission.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Converge_TO_weight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Converge_TO_weight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Determine_performance_parameters.py" beforeDir="false" afterPath="$PROJECT_DIR$/Determine_performance_parameters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fly_Mission.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fly_Mission.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mdd_constraint.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mdd_constraint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PayloadVsRangePlot.py" beforeDir="false" afterPath="$PROJECT_DIR$/PayloadVsRangePlot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resize_Engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/Resize_Engine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resize_Geometry.py" beforeDir="false" afterPath="$PROJECT_DIR$/Resize_Geometry.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fuel_weight_ratio_estimate.py" beforeDir="false" afterPath="$PROJECT_DIR$/fuel_weight_ratio_estimate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +77,7 @@
     "Python.Resize_Geometry.executor": "Run",
     "Python.Service Ceiling.executor": "Run",
     "Python.Service_Ceiling.executor": "Run",
+    "Python.Tail Sizing.executor": "Run",
     "Python.Takeoff_field_length.executor": "Run",
     "Python.approach speed.executor": "Run",
     "Python.approach_speed.executor": "Run",
@@ -120,7 +130,10 @@
       <workItem from="1770846107792" duration="45721000" />
       <workItem from="1771110996922" duration="19597000" />
       <workItem from="1772055738938" duration="92000" />
-      <workItem from="1772055851388" duration="10307000" />
+      <workItem from="1772055851388" duration="16093000" />
+      <workItem from="1772233594325" duration="1582000" />
+      <workItem from="1772936810197" duration="11505000" />
+      <workItem from="1773122124272" duration="15534000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -402,7 +415,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771186479808</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Added payload range diagram and fuselage size modules">
+      <option name="closed" value="true" />
+      <created>1772146490196</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1772146490196</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,7 +441,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added CSV fir JT9DD" />
     <MESSAGE value="Added poly fit for graphs" />
     <MESSAGE value="add fuel weight ratio estimate function" />
     <MESSAGE value="added drag constant Cdo" />
@@ -445,7 +465,8 @@
     <MESSAGE value="Updated plotting" />
     <MESSAGE value="Updated Mdd to support sweep above 25 deg" />
     <MESSAGE value="Added drag Polar Plotting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added drag Polar Plotting" />
+    <MESSAGE value="Added payload range diagram and fuselage size modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added payload range diagram and fuselage size modules" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -455,36 +476,32 @@
           <line>26</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Converge_TO_weight.py</url>
-          <line>53</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MAE159$fuel_weight_ratio_estimate.coverage" NAME="fuel_weight_ratio_estimate Coverage Results" MODIFIED="1769399451712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$PayloadVsRangePlot.coverage" NAME="PayloadVsRangePlot Coverage Results" MODIFIED="1772146449722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$fuel_weight_ratio_estimate.coverage" NAME="fuel_weight_ratio_estimate Coverage Results" MODIFIED="1772149521625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$PayloadVsRangePlot.coverage" NAME="PayloadVsRangePlot Coverage Results" MODIFIED="1772151215498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Takeoff_field_length.coverage" NAME="Takeoff_field_length Coverage Results" MODIFIED="1770619169156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Determine_performance_parameters.coverage" NAME="Determine_performance_parameters Coverage Results" MODIFIED="1771026265210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$main.coverage" NAME="main Coverage Results" MODIFIED="1771184381334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$main.coverage" NAME="main Coverage Results" MODIFIED="1772149589967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$approach_speed.coverage" NAME="approach_speed Coverage Results" MODIFIED="1770619138727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Tail_Sizing.coverage" NAME="Tail Sizing Coverage Results" MODIFIED="1773210409128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Propulsion.coverage" NAME="Propulsion Coverage Results" MODIFIED="1770971085641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Landing_Field_Length.coverage" NAME="Landing_Field_Length Coverage Results" MODIFIED="1770618978379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$Resize_Engine.coverage" NAME="Resize_Engine Coverage Results" MODIFIED="1771185025956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Resize_Engine.coverage" NAME="Resize_Engine Coverage Results" MODIFIED="1773007638239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$drag_constant_Cdo.coverage" NAME="drag_constant_Cdo Coverage Results" MODIFIED="1770092298717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Plotting_and_Surrogate_Modeling.coverage" NAME="Plotting and Surrogate Modeling Coverage Results" MODIFIED="1770759409126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$AR_vs_Sweep_Contour.coverage" NAME="AR vs Sweep Contour Coverage Results" MODIFIED="1771356429745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Plots" />
-    <SUITE FILE_PATH="coverage/MAE159$Converge_TO_weight.coverage" NAME="Converge_TO_weight Coverage Results" MODIFIED="1771118371173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$Converge_Mission.coverage" NAME="Converge_Mission Coverage Results" MODIFIED="1771183792655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Converge_TO_weight.coverage" NAME="Converge_TO_weight Coverage Results" MODIFIED="1773178921007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Converge_Mission.coverage" NAME="Converge_Mission Coverage Results" MODIFIED="1772150035540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Fly_Mission.coverage" NAME="Fly_Mission Coverage Results" MODIFIED="1770973670514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Climb.coverage" NAME="Climb Coverage Results" MODIFIED="1770619261364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Drag_Plotting.coverage" NAME="Drag Plotting Coverage Results" MODIFIED="1771186455211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$Calc_Fuselage_Geometry.coverage" NAME="Calc_Fuselage_Geometry Coverage Results" MODIFIED="1772090060262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$Mdd_constraint.coverage" NAME="Mdd_constraint Coverage Results" MODIFIED="1768785400890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Calc_Fuselage_Geometry.coverage" NAME="Calc_Fuselage_Geometry Coverage Results" MODIFIED="1772951729346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Mdd_constraint.coverage" NAME="Mdd_constraint Coverage Results" MODIFIED="1772149908505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Cruise_Thrust_Required.coverage" NAME="Cruise_Thrust_Required Coverage Results" MODIFIED="1770619192279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MAE159$Resize_Geometry.coverage" NAME="Resize_Geometry Coverage Results" MODIFIED="1771184574205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MAE159$Resize_Geometry.coverage" NAME="Resize_Geometry Coverage Results" MODIFIED="1773178626021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Calc_CDo.coverage" NAME="Calc CDo Coverage Results" MODIFIED="1770789654828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Plot_Testing.coverage" NAME="Plot Testing Coverage Results" MODIFIED="1768271879760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MAE159$Service_Ceiling.coverage" NAME="Service_Ceiling Coverage Results" MODIFIED="1770619225316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

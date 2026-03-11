@@ -6,3 +6,5 @@ def fuel_weight_ratio_estimate(range, M_cruise, altitude):   #range in nmi, alt 
     v_kts = M_cruise * Atmosphere(altitude * 0.3048).speed_of_sound[0] * 1.94384 # Converts M to kts
     all_out_range = range + 200 + .75 * v_kts # Mission range + 200 nmi + 45mins cruise speed
     return np.polyval(coeffes, all_out_range) * 0.782
+
+print(fuel_weight_ratio_estimate(3000, 0.82, 35000))
